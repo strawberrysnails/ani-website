@@ -3,7 +3,7 @@ backend:
   branch: main  
   repo: strawberrysnails/ani-website
 
-  local_backend: true 
+# local_backend: true # only for local testing
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
