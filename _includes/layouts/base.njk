@@ -5,23 +5,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
+		<link rel="stylesheet" href="/css/styles.css">
 	</head>
 	<body>
+	<div class="banner">
+  <div class="bird-container">
+	<p>Welcome to my website.</p>
+  </div>
+</div>
 
-		<header>
-		</header>
+	<header>
+	{% include "header.html" %}
+	</header>
 
-		<main id="main">
-			<heading-anchors>
+		<main>
 				{{ content | safe }}
-			</heading-anchors>
 		</main>
-
 		<footer>
-			<p>
-				<em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em>
-			</p>
+				{% include "footer.html" %}
 		</footer>
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<script>
+		const hamburger = document.getElementById("hamburger");
+		const mobileMenu = document.getElementById("mobileMenu");
+
+		hamburger.addEventListener("click", () => {
+			mobileMenu.classList.toggle("active");
+		});
+		</script>
+
 	</body>
 </html>

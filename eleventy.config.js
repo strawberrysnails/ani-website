@@ -3,6 +3,7 @@ export default function (eleventyConfig) {
   // Passthrough copy for static assets and CMS admin
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy({
     "./public/": "/"
   });
