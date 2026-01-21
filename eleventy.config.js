@@ -1,3 +1,4 @@
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
   // Passthrough copy for static assets and CMS admin
@@ -7,6 +8,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./public/": "/"
   });
+
+eleventyConfig.addCollection("posts", function(collectionApi) {
+  return collectionApi.getFilteredByTag("posts");
+});
+
 
   // Watch CSS and images for live reload
   eleventyConfig.addWatchTarget("css/**/*.css");
@@ -18,7 +24,7 @@ export default function (eleventyConfig) {
   });
 
 
-  // 🗓️ Add date filters
+  // Add date filters
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
     return new Date(dateObj).toISOString().split("T")[0];
   });
