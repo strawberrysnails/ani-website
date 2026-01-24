@@ -8,22 +8,23 @@
 		<link rel="stylesheet" href="/css/styles.css">
 	</head>
 	<body>
-	<div class="banner">
-  <div class="bird-container">
-	<p>Welcome to my website.</p>
-  </div>
-</div>
 
+<div class="forest-veil">
+  <img src="/assets/forest.png" alt="">
+</div>
+  <div class="container">
 	<header>
 	{% include "header.html" %}
 	</header>
 
 		<main>
-				{{ content | safe }}
+				{{ content | safe }} 
 		</main>
 		<footer>
 				{% include "footer.html" %}
 		</footer>
+</div>
+		
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 		<script>
 		const hamburger = document.getElementById("hamburger");
@@ -33,6 +34,36 @@
 			mobileMenu.classList.toggle("active");
 		});
 		</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const forest = document.querySelector(".forest-veil img");
+
+  let currentScale = 1;
+  let targetScale = 1;
+
+  const maxZoom = 0.30;     // total zoom amount
+  const sensitivity = 150; // LOWER = reacts sooner
+
+  function animate() {
+    // smooth interpolation
+    currentScale += (targetScale - currentScale) * 0.12;
+    forest.style.transform = `scale(${currentScale})`;
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+
+    // reacts immediately, eases out naturally
+    targetScale = 1 + Math.min(y / sensitivity, 1) * maxZoom;
+  });
+
+  animate();
+});
+</script>
+
+
 
 	</body>
 </html>

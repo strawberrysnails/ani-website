@@ -9,8 +9,8 @@ export default function (eleventyConfig) {
     "./public/": "/"
   });
 
-eleventyConfig.addCollection("posts", function(collectionApi) {
-  return collectionApi.getFilteredByTag("posts");
+eleventyConfig.addCollection("post", function(collectionApi) {
+  return collectionApi.getFilteredByTag("post");
 });
 
 
