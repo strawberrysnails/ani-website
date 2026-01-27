@@ -3,10 +3,19 @@
 	--link-hover: #0077cc;
 }
 
-/* FOLKLORE FONT */
 @font-face {
 	font-family: "folklore";
 	src: url(/assets/fonts/ImFell.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "Bronela";
+	src: url(/assets/fonts/Bronela.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "Kelmscott";
+	src: url(/assets/fonts/KELMSCOT.TTF) format("truetype");
 }
 
 body {
@@ -116,14 +125,14 @@ main {
   padding-top: 35vh;
 }
 
-.hero::after {
+.hero-content::after {
   content: "";
   position: absolute;
-  top: 150px;
-  left: 550px;
-  width: 250px;
+	top: 300px;
+  right: 20%;
+  width: 464px;
   height: 400px;
-  background-image: url(/assets/key.png);
+  background-image: url(/assets/nymphs.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -131,12 +140,14 @@ main {
   transition: transform 0.5s ease-in-out;
 }
 
-
-/* Hover on parent */
-.hero:hover::after {
+.hero:hover .hero-content::after {
   transform: rotate(5deg);
 }
 
+.hero-content h1::first-letter{
+font-family: Kelmscott;
+font-size: 50px;
+}
 
 header {
 	position: relative;
@@ -417,4 +428,10 @@ footer {
 	.logo {
 		display: none;
 	}
+
+	.hero-content::after {
+	top: 400px;
+
+}
+
 }
