@@ -9,17 +9,16 @@
 	</head>
 	<body>
 
-<div class="forest-veil">
-  <img src="/assets/forest.png" alt="">
-</div>
+
   <div class="container">
+				<div class="curtain curtain-left"></div>
+<div class="curtain curtain-right"></div>
 	<header>
 	{% include "header.html" %}
 	</header>
 
-		<main>
-				{{ content | safe }} 
-		</main>
+		{{ content | safe }}
+
 		<footer>
 				{% include "footer.html" %}
 		</footer>
@@ -35,33 +34,6 @@
 		});
 		</script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const forest = document.querySelector(".forest-veil img");
-
-  let currentScale = 1;
-  let targetScale = 1;
-
-  const maxZoom = 0.30;     // total zoom amount
-  const sensitivity = 150; // LOWER = reacts sooner
-
-  function animate() {
-    // smooth interpolation
-    currentScale += (targetScale - currentScale) * 0.12;
-    forest.style.transform = `scale(${currentScale})`;
-    requestAnimationFrame(animate);
-  }
-
-  window.addEventListener("scroll", () => {
-    const y = window.scrollY;
-
-    // reacts immediately, eases out naturally
-    targetScale = 1 + Math.min(y / sensitivity, 1) * maxZoom;
-  });
-
-  animate();
-});
-</script>
 
 
 

@@ -1,5 +1,22 @@
 ---
 layout: layouts/base.njk
 ---
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1>Unlock your potential</h1>
+    <p>more hero text here.</p>
+  </div>
+</section>
 
-{{ content | safe }}
+<script>
+    const hero = document.getElementById("hero");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const maxBlur = 12;
+  const blur = Math.min(scrollY / 80, maxBlur);
+
+  hero.style.setProperty("--blurValue", blur + "px");
+});
+
+</script>

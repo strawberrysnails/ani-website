@@ -1,22 +1,20 @@
- <nav class="navbar">
-    <!-- Hamburger icon (hidden on desktop) -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+<nav class="navbar">
+  <!-- Hamburger icon (unchanged) -->
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
 
-    <!-- Desktop nav -->
-  <div class="header-inner">
-    <div class="logo">
-      <img src="/assets/AC_Logo_DarkPortal.png">
+  <!-- Desktop nav row -->
+  <div class="nav-row">
+        <!-- Logo -->
+    <div class="logo inline-logo">
+      <img src="/assets/AC_Logo_DarkPortal.png" alt="Logo">
     </div>
-    <br>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about/">About</a></li>
       <li><a href="/blog/">Blog</a></li>
-      <li><a href="/book/">Book with Me</a></li>
+
       <li class="dropdown">
         <a href="#">More ▾</a>
         <ul class="dropdown-menu">
@@ -25,7 +23,13 @@
         </ul>
       </li>
     </ul>
-  </nav>
+
+
+    <!-- CTA -->
+    <a href="/book/" class="book-btn">Book with Me</a>
+  </div>
+</nav>
+
 
   <!-- Slide-in Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
