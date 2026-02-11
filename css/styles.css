@@ -22,8 +22,8 @@ body {
 	font-family: folklore;
 	background-size: cover;
 	background-position: fixed;
-	background-color: #424930;
-	background-image: url(/assets/floral.png);
+	background-color: #798263;
+	background-image:;
 	margin: 0;
 }
 
@@ -93,7 +93,7 @@ main {
 	margin: auto;
 	position: relative;
 	min-height: 100vh;
-	background-color: #333;
+	background-color: transparent;
 }
 
 .hero {
@@ -147,6 +147,19 @@ main {
 .hero-content h1::first-letter{
 font-family: Kelmscott;
 font-size: 50px;
+}
+
+.home-panel{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  	background-color: antiquewhite;
+	background-image: url(/assets/paper-texture.png);
+}
+
+.home-inner{
+	display: grid;
 }
 
 header {
@@ -339,6 +352,9 @@ header {
 
 footer {
 	background-color: antiquewhite;
+	text-align: right;
+	padding-right:100px;
+	padding-top:10px;
 }
 
 /* Hamburger*/
