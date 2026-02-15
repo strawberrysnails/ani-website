@@ -8,36 +8,33 @@
   <div class="nav-row">
         <!-- Logo -->
     <div class="logo inline-logo">
-      <img src="/assets/AC_Logo_DarkPortal.png" alt="Logo">
+      <img src="/assets/AC_Logo_InkyBlack.png" alt="Logo">
     </div>
     
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about/">About</a></li>
       <li><a href="/blog/">Blog</a></li>
-
-      <li class="dropdown">
-        <a href="#">More ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="/gallery/">Gallery</a></li>
-          <li><a href="/contact/">Contact</a></li>
         </ul>
-      </li>
     </ul>
 
+      <div class="nav-right">
+  <ul class="socials">{% include "socials.html" %}</ul>
+  <a href="#" class="book-btn">Work With Me</a>
+</div>
 
-    <!-- CTA -->
-    <a href="/book/" class="book-btn">Book with Me</a>
   </div>
 </nav>
 
 
+
   <!-- Slide-in Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
+      <img src="/assets/AC_Logo_InkyBlack.png" alt="Logo">
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
-    <a href="/book/">Book with Me</a>
-    <a href="/gallery/">Gallery</a>
-    <a href="/contact/">Contact</a>
+    <a href="#">Work with Me</a>
+
+        <ul class="socials">{% include "socials.html" %}</ul>
   </div>

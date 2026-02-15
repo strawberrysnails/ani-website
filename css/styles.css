@@ -1,6 +1,6 @@
 :root {
 	--link-color: #0000;
-	--link-hover: #0077cc;
+	--link-hover: #e3aab1;
 }
 
 @font-face {
@@ -18,6 +18,11 @@
 	src: url(/assets/fonts/KELMSCOT.TTF) format("truetype");
 }
 
+@font-face {
+	font-family: "Explora";
+	src: url(/assets/fonts/Explora.ttf) format("truetype");
+}
+
 body {
 	font-family: folklore;
 	background-size: cover;
@@ -27,66 +32,67 @@ body {
 	margin: 0;
 }
 
+a:visited{
+	color:#333;
+}
+
 .container {
-  width: 100%;
-  margin-inline: auto;
-  position: relative;
-  z-index: 1;
-  background-color: transparent;
-  overflow: hidden;
+	width: 100%;
+	margin-inline: auto;
+	position: relative;
+	z-index: 1;
+	background-color: transparent;
+	overflow: hidden;
 }
 
 .curtain {
-  position: absolute;
-  top: 170px;
-  height: 100vh;
-  width: 354px; /* EXACT width */
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 2;
-  transform: scale(1.5);
-  pointer-events: none;
-  animation-duration: 1.6s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  animation-delay: .2s;
-  filter: sepia(20%);
+	position: absolute;
+	top: -100px;
+	height: 100vh;
+	width: 354px; /* EXACT width */
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 2;
+	transform: scale(1.5);
+	pointer-events: none;
+	animation-duration: 1.4s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 0.1s;
+	filter: sepia(20%);
 }
 
 .curtain-left {
-  left: -25px;
-  background-image: url("/assets/curtain-left.png");
-  animation-name: curtain-open-left;
-  transform-origin: left center; 
+	left: -15px;
+	background-image: url("/assets/curtain-left.png");
+	animation-name: curtain-open-left;
+	transform-origin: left top;
 }
 
 .curtain-right {
-  right: 0;
-  background-image: url("/assets/curtain-right.png");
-  animation-name: curtain-open-right;
-  transform-origin: right center;
+	right: 10px;
+	background-image: url("/assets/curtain-right.png");
+	animation-name: curtain-open-right;
+	transform-origin: right top;
 }
 
-
 @keyframes curtain-open-left {
-  from {
-    transform: translateX(0) scale(1.5);
-  }
-  to {
-    transform: translateX(-100%) scale(0.9);
-  }
+	from {
+		transform: translateX(0) scale(1.5);
+	}
+	to {
+		transform: translateX(-100%) scale(0.9);
+	}
 }
 
 @keyframes curtain-open-right {
-  from {
-    transform: translateX(0) scale(1.5);
-  }
-  to {
-    transform: translateX(100%) scale(0.9);
-  }
+	from {
+		transform: translateX(0) scale(1.5);
+	}
+	to {
+		transform: translateX(100%) scale(0.9);
+	}
 }
-
-
 
 main {
 	max-width: 1400px;
@@ -97,86 +103,166 @@ main {
 }
 
 .hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url(/assets/fairy-forest.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: blur(var(--blurValue, 0px));
-  transform: scale(1.05);
-  z-index: 0;
-  transition: filter 0.2s ease;
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: url(/assets/fairy-forest.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: blur(var(--blurValue, 0px));
+	transform: scale(1.05);
+	z-index: 0;
+	transition: filter 0.2s ease;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
-  padding-top: 35vh;
+	position: relative;
+	z-index: 1;
+	color: white;
+	text-align: center;
+	padding-top: 35vh;
 }
 
 .hero-content::after {
-  content: "";
-  position: absolute;
+	content: "";
+	position: absolute;
 	top: 300px;
-  right: 20%;
-  width: 464px;
-  height: 400px;
-  background-image: url(/assets/nymphs.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 2;
-  transition: transform 0.5s ease-in-out;
+	right: 20%;
+	width: 464px;
+	height: 400px;
+	background-image: url(/assets/nymphs.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 2;
+	transition: transform 0.5s ease-in-out;
 }
 
 .hero:hover .hero-content::after {
-  transform: rotate(5deg);
+	transform: rotate(5deg);
 }
 
-.hero-content h1::first-letter{
-font-family: Kelmscott;
-font-size: 50px;
+.hero-content h1::first-letter {
+	font-family: Kelmscott;
+	font-size: 50px;
 }
 
-.home-panel{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  	background-color: antiquewhite;
+.home-panel {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+	background-color: antiquewhite;
 	background-image: url(/assets/paper-texture.png);
 }
 
-.home-inner{
-	display: grid;
+
+.home-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;           /* allows stacking on very small screens */
+  margin: 0 auto;
+  margin-top: 10rem;
+  padding: 2rem;
+  max-width: 1600px;
+  box-sizing: border-box;
+  position: relative;        /* for ::before panel border */
 }
+
+.home-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;           /* container width */
+  height: 100%;
+  background-image: url("/assets/panel-border.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: contain;
+  opacity: .8;
+}
+
+
+.home-content {
+  flex: 1 1 400px;           /* flexible width, base 400px */
+  min-width: 250px;           /* prevent content from shrinking too small */
+  margin-top: 6rem;           /* top spacing */
+  margin-left: 8rem;
+  margin-right: 2rem;
+  z-index: 2;
+}
+
+
+.home-content h1{
+	font-family: Kelmscott;
+	font-size: 50px;
+	color:#333;
+}
+
+
+.frame-wrapper {
+  flex: 0 0 400px;           /* fixed width for frame on large screens */
+  max-width: 100%;            /* prevents overflow on small screens */
+  position: relative;
+  z-index: 2;
+  margin-left: auto;          /* pushes it to the right */
+}
+
+
+/* Main half-oval frame */
+.frame {
+  display: block;
+  width: 400px;           
+  height: 500px;          
+  object-fit: cover;      
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 5px solid #686868;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;              /* ensure frame sits above flowers */
+}
+
+/* Flowers behind frame */
+.flower {
+  position: absolute;
+  z-index: 1;              /* behind the frame */
+  width: 300px;             /* adjust size */
+  height: auto;
+}
+
+/* Individual flower positions */
+.flower-1 { top: -20px; left: -100px; }
+.flower-2 { top: 30px; right: -75px; }
+
+
 
 header {
 	position: relative;
 	top: 0;
 	width: 100%;
-	min-height: 100px;
+	min-height: 85px;
 	margin: 0;
 	background-image: url("/assets/black-paper.png");
 	box-shadow:
 		0 18px 40px rgba(0, 0, 0, 0.25),
 		0 6px 10px rgba(0, 0, 0, 0.12);
 	background-color: #44472e;
-	border-bottom: #000000 2px solid;
+	border-bottom: #363636aa 2px solid;
 	z-index: 3;
 }
-
 
 @keyframes fairy-drop {
 	0% {
@@ -218,35 +304,31 @@ header {
 
 .nav-row::before,
 .nav-row::after {
-  content: "";
-  position: absolute;
-  bottom: -8px; 
-  width: 120px;
-  height: 120px;
-  pointer-events: none;
-  z-index: 2;
+	content: "";
+	position: absolute;
+	bottom: -8px;
+	width: 120px;
+	height: 120px;
+	pointer-events: none;
+	z-index: 2;
 
-  animation:
-    fairy-drop 1.2s ease-out forwards,
-    fairy-float 4s ease-in-out infinite;
-  animation-delay:
-    0s,
-    1.2s;
+	animation:
+		fairy-drop 1.2s ease-out forwards,
+		fairy-float 4s ease-in-out infinite;
+	animation-delay: 0s, 1.2s;
 
-  filter: drop-shadow(0 0 6px rgba(255,255,200,0.35));
+	filter: drop-shadow(0 0 6px rgba(255, 255, 200, 0.35));
 }
 
 .nav-row::before {
-  left: -110px;
-  background: url("/assets/fairy-left.png") no-repeat center / contain;
+	left: -110px;
+	background: url("/assets/fairy-left.png") no-repeat center / contain;
 }
 
 .nav-row::after {
-  right: -110px;
-  background: url("/assets/fairy-right.png") no-repeat center / contain;
+	right: -110px;
+	background: url("/assets/fairy-right.png") no-repeat center / contain;
 }
-
-
 
 .navbar {
 	width: 100%;
@@ -257,22 +339,27 @@ header {
 }
 
 .nav-row {
-	position: relative;
-	width: 100%;
-	max-width: 1400px;
-	display: flex;
-	align-items: center;
-	background-color: antiquewhite;
-	background-image: url(/assets/paper-texture.png);
-	border: 18px solid;
-	border-image: url(/assets/frame1.png) 18 round;
-	padding: 10px 10px 0px 10px;
-	box-shadow:
-		0 18px 40px rgba(0, 0, 0, 0.25),
-		0 6px 10px rgba(0, 0, 0, 0.12);
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 7vw;   /* 2% of viewport width on left and right */
+  display: flex;
+  align-items: center;
+
+  background-color: antiquewhite;
+  background-image: url(/assets/paper-texture.png);
+  border: 18px solid;
+  border-image: url(/assets/frame1.png) 18 round;
+
+  padding: 10px 10px 0 10px;  /* keep your top/inner padding */
+  box-sizing: border-box;
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.25),
+    0 6px 10px rgba(0, 0, 0, 0.12);
 }
 
-/* Links on the left */
+
 .nav-links {
 	display: flex;
 	gap: 2rem;
@@ -280,12 +367,26 @@ header {
 	margin: 0;
 	padding: 0;
 	gap: 40px;
+	  transition: color 0.2s ease;
 }
 
 .nav-links a {
-	text-decoration: none;
-	color: black;
-	font-size: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #2a2a2a;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--link-hover);   /* highlight on hover */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; 
+  margin-left: auto;
+  padding-right:10px;
 }
 
 .book-btn {
@@ -302,8 +403,8 @@ header {
 	transition:
 		transform 0.15s ease,
 		box-shadow 0.15s ease;
-	margin-left: auto;
-	margin-right: 30px;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .book-btn:hover {
@@ -313,48 +414,30 @@ header {
 		0 6px 14px rgba(0, 0, 0, 0.35);
 }
 
-/* Dropdown */
-.dropdown {
-	position: relative;
+.socials {
+  display: flex;
+  list-style: none;
+  gap: 0.75rem; /* spacing between icons */
+  margin: 0;     /* remove old margin-left: auto */
+  align-items: center;
 }
 
-.dropdown-menu {
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	background: white;
-	border: 1px solid #ddd;
-	list-style: none;
-	padding: 0.5rem 0;
-	min-width: 160px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-	z-index: 10;
+.socials li a {
+  color: #333;
+  font-size: 1rem;
+  transition: transform 0.2s, color 0.2s;
 }
 
-.dropdown-menu li {
-	padding: 0;
+.socials li a:hover {
+  color: var(--link-hover);
 }
 
-.dropdown-menu a {
-	display: block;
-	padding: 0.5rem 1rem;
-	color: #333;
-}
-
-.dropdown-menu a:hover {
-	background: #f2f2f2;
-}
-
-.dropdown:hover .dropdown-menu {
-	display: block;
-}
 
 footer {
 	background-color: antiquewhite;
 	text-align: right;
-	padding-right:100px;
-	padding-top:10px;
+	padding-right: 100px;
+	padding-top: 10px;
 }
 
 /* Hamburger*/
@@ -409,6 +492,11 @@ footer {
 	color: var(--link-hover);
 }
 
+.mobile-menu img{
+	max-width: 65px;
+}
+
+
 /* Mobile */
 @media (max-width: 768px) {
 	@media (max-width: 768px) {
@@ -429,12 +517,16 @@ footer {
 		z-index: 1100;
 	}
 
-	header{
-	border: none;
-	background-color: transparent;
-	background-image: none;
-	filter: none;
-	box-shadow: none;
+	header {
+		border: none;
+		background-color: transparent;
+		background-image: none;
+		filter: none;
+		box-shadow: none;
+		height: 0;
+		width: 0;
+		min-height: 0;
+		margin: 0;
 	}
 
 	.curtain,
@@ -446,8 +538,180 @@ footer {
 	}
 
 	.hero-content::after {
-	top: 400px;
+		top: 400px;
+	}
+
+	.socials {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.home-content {
+  margin-left:50px;
+  margin-top: 0rem;
+}
 
 }
 
+
+.marquee-block {
+  width: 100%;
+  overflow: hidden;             /* hide text outside container */
+  background-color: antiquewhite;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;           /* shrink-wrap to text width */
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-content p {
+  font-family: 'Kelmscott', serif;
+  color:#333;
+  font-size: 6rem;
+  white-space: nowrap;
+  margin: 0 30rem 0 0;          /* spacing between repeats */
+}
+
+/* marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);       /* start at initial position */
+  }
+  100% {
+    transform: translateX(-50%);    /* scroll left by half the content width */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .marquee-content p {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-content p {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-content p {
+    font-size: 2rem;
+  }
+}
+
+.faq {
+  min-height: 100vh;
+  background-color: ;
+  padding-bottom: 4rem;
+  box-sizing: border-box;
+}
+
+/* Top banner */
+.faq-banner {
+  width: 100%;
+  padding: 4rem 2rem;
+  background-color: transparent;
+  background-image: url(/assets/faq-banner.gif);
+  text-align: center;
+}
+
+
+/* Two-column content */
+.faq-content {
+  display: flex;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  margin-top: 5rem;
+  align-items: flex-start;
+  flex-wrap: wrap; /* stack on mobile */
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Left image */
+.faq-image {
+  flex: 0 0 400px;      /* fixed width on large screens */
+  max-width: 100%;
+}
+
+.faq-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;   /* optional rounded corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.faq-items {
+  flex: 1 1 400px;
+  min-width: 250px;
+}
+
+/* Style each FAQ item */
+.faq-item {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #cccccc6d;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Style the question */
+.faq-item summary {
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none; /* remove default triangle */
+  position: relative;
+  padding-right: 2rem;
+}
+
+/* Add custom arrow */
+.faq-item summary::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when open */
+.faq-item[open] summary::after {
+  transform: rotate(-180deg);
+}
+
+/* Answer styling */
+.faq-item p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-left: 0.5rem;
+}
+
+/* Optional: smooth expand/collapse */
+.faq-item p {
+  transition: max-height 0.4s ease;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .faq-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq-image, .faq-items {
+    flex: 1 1 100%;
+    margin: 0;
+  }
+
+  .faq-banner h2 {
+    font-size: 2rem;
+  }
 }
