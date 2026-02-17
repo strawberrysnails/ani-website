@@ -32,9 +32,15 @@ body {
 	margin: 0;
 }
 
-a:visited{
-	color:#333;
+a{
+  color: #333;
+  transition: all ease-in-out .2s;
 }
+
+a:hover{
+  color:#956d72
+}
+
 
 .container {
 	width: 100%;
@@ -1032,7 +1038,7 @@ footer {
 main {
   max-width: 1000px;
   margin: 2rem auto;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 2rem;
   font-family: "Folklore", sans-serif;
   line-height: 1.6;
@@ -1170,6 +1176,30 @@ main blockquote {
   color: #444;
   margin: 1.5rem 0;
 }
+/* Blog post content lists only */
+.blog-content ul {
+  list-style: disc;
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.blog-content ol {
+  list-style: decimal;
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.blog-content ul,
+.blog-content ol {
+  font-size: 1rem;
+  color: inherit;
+}
+
 
 /* =========================
    RESPONSIVE
