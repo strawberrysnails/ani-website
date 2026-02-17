@@ -631,7 +631,10 @@ footer {
   flex-wrap: wrap; /* stack on mobile */
   padding: 0 2rem;
   box-sizing: border-box;
+  color:#333;
 }
+
+
 
 /* Left image */
 .faq-image {
@@ -649,6 +652,11 @@ footer {
 .faq-items {
   flex: 1 1 400px;
   min-width: 250px;
+}
+
+.faq-items h1{
+  color:#1e1e1e;
+  font-family: "Kelmscott";
 }
 
 /* Style each FAQ item */
@@ -926,7 +934,7 @@ footer {
 }
 
 .offering-text {
-  flex: 1 1 400px;
+  flex: 1 1 700px;
   min-width: 280px;
   line-height: 1.5;
   font-size: 1.05rem;
@@ -963,7 +971,7 @@ footer {
    OFFERING IMAGES
 ========================= */
 .offering-image {
-  flex: 0 0 35%;
+  flex: 0 0 45%;
   max-width: 100%;
 }
 
