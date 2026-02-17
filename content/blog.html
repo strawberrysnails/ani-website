@@ -3,15 +3,15 @@ layout: layouts/base.njk
 title: Blog
 permalink: /blog/
 ---
-<main>
-<h1>Blog</h1>
+<main class="blog-feed">
+  <h1>Blog</h1>
 
-<ul>
-  {% for post in collections.post %}
-    <li>
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
-      <span>{{ post.date | readableDate }}</span>
-    </li>
-  {% endfor %}
-</ul>
+  <ul>
+    {% for post in collections.post %}
+      <li>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        <span>{{ post.date | readableDate }}</span>
+      </li>
+    {% endfor %}
+  </ul>
 </main>

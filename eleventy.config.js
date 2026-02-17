@@ -24,18 +24,31 @@ eleventyConfig.addCollection("post", function(collectionApi) {
   });
 
 
-  // Add date filters
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    return new Date(dateObj).toISOString().split("T")[0];
-  });
+// Add date filters
+eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+  return new Date(dateObj).toISOString().split("T")[0];
+});
 
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return new Intl.DateTimeFormat("en", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }).format(new Date(dateObj));
-  });
+eleventyConfig.addFilter("readableDate", (dateObj) => {
+  return new Intl.DateTimeFormat("en", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(new Date(dateObj));
+});
+
+// Fix footer year error
+eleventyConfig.addFilter("year", (dateObj) => {
+  let date;
+  if (!dateObj || dateObj === "now") {
+    date = new Date(); // use current date
+  } else {
+    date = new Date(dateObj);
+  }
+  return date.getFullYear();
+});
+
+
 
 }
 
